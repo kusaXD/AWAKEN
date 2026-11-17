@@ -1,1 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
+
+* {
+  font-family: "Manrope", sans-serif;
+}
+
+@theme {
+  /* Backgrounds */
+  --color-background: #0c0e11;
+  --color-sidebar: #17191c;
+  --color-card: #15171a;
+  --color-card-hover: #1d2024;
+  --color-elevated: #222427;
+  --color-input: #1b1d20;
+
+  /* Borders */
+  --color-border: #303236;
+
+  /* Gold */
+  --color-primary: #e6b477;
+  --color-primary-light: #f3c88d;
+  --color-primary-dark: #a77a48;
+  --color-primary-bg: #30271f;
+
+  /* Text */
+  --color-text: #e2e0df;
+  --color-text-secondary: #a1a1a4;
+  --color-muted: #777b80;
+  --color-disabled: #55585c;
+
+  /* Icons */
+  --color-intelligence: #729cc5;
+  --color-strength: #c58b5b;
+  --color-health: #78ae91;
+  --color-discipline: #e6b477;
+
+  /* Status */
+  --color-success: #82b99a;
+  --color-danger: #d97878;
+}
+
+@layer components {
+  .bgimg {
+    background:
+      linear-gradient(rgba(12, 14, 17, 0.45), rgba(12, 14, 17, 0.75)),
+      url("../public/assets/castle.png") center / cover fixed;
+  }
+
+  .gradient-border {
+    position: relative;
+    border-radius: 16px;
+    border: 1px solid transparent;
+
+    background-clip: padding-box;
+  }
+
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.04),
+      rgba(230, 180, 119, 0.1)
+    );
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+  }
+}
