@@ -47,6 +47,24 @@
       url("../public/assets/castle.png") center / cover fixed;
   }
 
+  .bg-gradient {
+    background: linear-gradient(
+      100deg,
+      #947044 0%,
+      #725638 18%,
+      #493a2b 48%,
+      #292522 100%
+    );
+  }
+
+  .aside-button {
+    height: calc(var(--spacing) * 15);
+  }
+  .aside-button.active {
+    border-radius: var(--radius-2xl);
+    border: 1px solid;
+  }
+
   .gradient-border {
     position: relative;
     border-radius: 16px;
